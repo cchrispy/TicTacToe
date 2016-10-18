@@ -59,17 +59,17 @@ var toggle = function(square) { // toggles the square according to the player
 
 prompt.start();
 
+var prompt
+
 console.log(board);
-while(!complete || filled < 9) {
-  console.log('========================================================================');
-  console.log('Player ' + player + '\'s turn');
-  console.log('Choose a number between 1-9 for the square #, starting from the top left')
-  prompt.get(['square'], function(err, res) {
-    toggle(res.square);
-    checkCompletion();
-    console.log(board);
-  });
-}
+console.log('========================================================================');
+console.log('Player ' + player + '\'s turn');
+console.log('Choose a number between 1-9 for the square #, starting from the top left')
+prompt.get(['square'], function(err, res) {
+  toggle(res.square);
+  checkCompletion();
+  console.log(board);
+});
 
 // have a function that checks if a game is complete or not
 // while the checking function is false, then prompt the user for a square number
