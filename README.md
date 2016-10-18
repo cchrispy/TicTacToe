@@ -1,5 +1,9 @@
 # TicTacToe
 
+### Getting started  
+To start the game, clone the repo and open up the terminal.  
+`node src/tictactoe.js` to start the game.
+
 ### How to play  
 The tic-tac-toe squares are numbered one through nine, starting from the top left ("one") to the bottom right ("nine"). When prompted, enter a valid square to toggle the square. Use the word rather than the number to identify the square (e.g. "one", "five", "nine"; not 1, 5, 9).
 
