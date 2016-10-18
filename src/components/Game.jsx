@@ -4,43 +4,71 @@ import '../styles.scss';
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      one: '',
+      two: '',
+      three: '',
+      four: '',
+      five: '',
+      six: '',
+      seven: '',
+      eight: '',
+      nine: ''
+    };
   }
 
   render() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xs-4 one" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.one }
           </div>
-          <div className="col-xs-4 two" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.two }
           </div>
-          <div className="col-xs-4 three" onClick={ this.props.changeUser } >
-
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xs-4 four" onClick={ this.props.changeUser } >
-
-          </div>
-          <div className="col-xs-4 five" onClick={ this.props.changeUser } >
-
-          </div>
-          <div className="col-xs-4 six" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.three }
           </div>
         </div>
         <div className="row">
-          <div className="col-xs-4 seven" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.four }
           </div>
-          <div className="col-xs-4 eight" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.five }
           </div>
-          <div className="col-xs-4 nine" onClick={ this.props.changeUser } >
-
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.six }
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.seven }
+          </div>
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.eight }
+          </div>
+          <div className="col-xs-4" onClick={ () => {
+            this.props.changeUser(); 
+          }} >
+            { this.state.nine }
           </div>
         </div>
       </div>

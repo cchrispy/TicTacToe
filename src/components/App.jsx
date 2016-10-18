@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Game changeUser={ this.changeUser.bind(this) } />
+        <Game name={ this.state.current } changeUser={ this.changeUser.bind(this) } />
         <Player name={ this.state.current } />
       </div>
     )
