@@ -5,7 +5,6 @@ var board = [
   [[' '], [' '], [' ']],
   [[' '], [' '], [' ']]
 ];
-console.log(board);
 
 var squares = { // references the correct square
   'one': board[0][0],
@@ -20,7 +19,7 @@ var squares = { // references the correct square
 }
 
 var complete = false;
-var filled = 0; // number of tic tac toe squares filled
+var filled = 0; // number of tic tac toe squares filled; failsafe for checkCompletion
 var player = 'X';
 var checkCompletion = function() { // checks if the game is over
 
@@ -55,15 +54,22 @@ var toggle = function(square) { // toggles the square according to the player
     squares[square][0] = player;
   }
   player = player === 'X' ? 'Y' : 'X';
+  filled++;
 }
 
 prompt.start();
 
-console.log('Choose a number between 1-9 for the square #, starting from the top left')
-prompt.get(['square'], function(err, res) {
-  toggle(res.square);
-  console.log(board);
-});
+console.log(board);
+while(!complete || filled < 9) {
+  console.log('========================================================================');
+  console.log('Player ' + player + '\'s turn');
+  console.log('Choose a number between 1-9 for the square #, starting from the top left')
+  prompt.get(['square'], function(err, res) {
+    toggle(res.square);
+    checkCompletion();
+    console.log(board);
+  });
+}
 
 // have a function that checks if a game is complete or not
 // while the checking function is false, then prompt the user for a square number
