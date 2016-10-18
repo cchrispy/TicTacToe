@@ -51,17 +51,10 @@ var checkSquare = function(square) { // check if a square is empty
 }
 
 var toggle = function(square) { // toggles the square according to the player
-  switch (square) {
-    case 'one': 
-    case 'two':
-    case 'three':
-    case 'four':
-    case 'five':
-    case 'six':
-    case 'seven':
-    case 'eight':
-    case 'nine':
+  if (checkSquare(square)) {
+    squares[square][0] = player;
   }
+  player = player === 'X' ? 'Y' : 'X';
 }
 
 
@@ -73,7 +66,8 @@ prompt.start();
 
 console.log('Choose a number between 1-9 for the square #, starting from the top left')
 prompt.get(['square'], function(err, res) {
-  console.log('response: ', res.square);
+  toggle(res.square);
+  console.log(board);
 });
 
 // have a function that checks if a game is complete or not
