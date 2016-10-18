@@ -1,9 +1,9 @@
 var prompt = require('prompt');
 
 var board = [
-  [[' '], [' '], ['X']],
-  [[' '], ['X'], [' ']],
-  [['X'], [' '], [' ']]
+  [[' '], [' '], [' ']],
+  [[' '], [' '], [' ']],
+  [[' '], [' '], [' ']]
 ];
 console.log(board);
 
@@ -44,7 +44,7 @@ var checkCompletion = function() { // checks if the game is over
 }
 
 var checkSquare = function(square) { // check if a square is empty
-  if (squares[square] === ' ') {
+  if (squares[square][0] === ' ') {
     return true;
   }
   return false;
@@ -56,11 +56,6 @@ var toggle = function(square) { // toggles the square according to the player
   }
   player = player === 'X' ? 'Y' : 'X';
 }
-
-
-
-checkCompletion();
-console.log(complete);
 
 prompt.start();
 
