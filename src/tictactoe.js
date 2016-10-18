@@ -1,11 +1,23 @@
 var prompt = require('prompt');
 
 var board = [
-  [[' '], [' '], [' ']],
-  [[' '], [' '], [' ']],
-  [[' '], [' '], [' ']]
+  [[' '], [' '], ['X']],
+  [[' '], ['X'], [' ']],
+  [['X'], [' '], [' ']]
 ];
 console.log(board);
+
+var squares = { // references the correct square
+  'one': board[0][0],
+  'two': board[0][1],
+  'three': board[0][2],
+  'four': board[1][0],
+  'five': board[1][1],
+  'six': board[1][2],
+  'seven': board[2][0],
+  'eight': board[2][1],
+  'nine': board[2][2]
+}
 
 var complete = false;
 var filled = 0; // number of tic tac toe squares filled
@@ -24,11 +36,18 @@ var checkCompletion = function() { // checks if the game is over
     }
   }
 
-  if (board[0][0][0] === board[1][1][0] && board[1][1][0] === board[2][2][0]
-   || board[0][2][0] === board[1][1][0] && board[1][1][0] === board[2][0][0]) { // check diagonals
+  if (squares.one[0] === squares.five[0] && squares.five[0] === squares.nine[0]
+   || squares.three[0] === squares.five[0] && squares.five[0] === squares.seven[0]) {
     complete = true;
   }
 
+}
+
+var checkSquare = function(square) { // check if a square is empty
+  if (squares[square] === ' ') {
+    return true;
+  }
+  return false;
 }
 
 var toggle = function(square) { // toggles the square according to the player
