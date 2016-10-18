@@ -10,10 +10,16 @@ class App extends Component {
     };
   }
 
+  changeUser() {
+    this.setState({
+      current: this.state.current === 'X' ? 'O' : 'X'
+    });
+  }
+
   render() {
     return (
       <div>
-        <Game />
+        <Game changeUser={ this.changeUser.bind(this) } />
         <Player name={ this.state.current } />
       </div>
     )
