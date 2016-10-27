@@ -20,7 +20,8 @@ class Game extends Component {
   markSquare(square) {
     this.setState({
       [square]: this.props.name
-    })
+    });
+    this.props.changeUser();
   }
 
   render() {
@@ -28,60 +29,69 @@ class Game extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('one');
-            this.props.changeUser(); 
+            if (!this.state['one']) {
+              this.markSquare('one');
+            }
           }} >
             { this.state.one }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('two');
-            this.props.changeUser(); 
+            if (!this.state['two']) {
+              this.markSquare('two');
+            }
           }} >
             { this.state.two }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('three');
-            this.props.changeUser(); 
+            if (!this.state['three']) {
+              this.markSquare('three');
+            }
           }} >
             { this.state.three }
           </div>
         </div>
         <div className="row">
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('four');
-            this.props.changeUser(); 
+            if (!this.state['four']) {
+              this.markSquare('four');
+            }
           }} >
             { this.state.four }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('five');
-            this.props.changeUser(); 
+            if (!this.state['five']) {
+              this.markSquare('five');
+            }
           }} >
             { this.state.five }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('six');
-            this.props.changeUser(); 
+            if (!this.state['six']) {
+              this.markSquare('six');
+            }
           }} >
             { this.state.six }
           </div>
         </div>
         <div className="row">
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('seven');
-            this.props.changeUser(); 
+            if (!this.state['seven']) {
+              this.markSquare('seven');
+            }
           }} >
             { this.state.seven }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('eight');
-            this.props.changeUser(); 
+            if (!this.state['eight']) {
+              this.markSquare('eight');
+            }
           }} >
             { this.state.eight }
           </div>
           <div className="col-xs-4 square" onClick={ () => {
-            this.markSquare('nine');
-            this.props.changeUser(); 
+            if (!this.state['nine']) {
+              this.markSquare('nine');
+            }
           }} >
             { this.state.nine }
           </div>
